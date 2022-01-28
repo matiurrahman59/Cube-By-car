@@ -1,0 +1,46 @@
+.heading-1 {
+  font-size: 3.6rem;
+  font-family: $display-font;
+  font-weight: 700;
+
+  @media only screen and (max-width: $bp-large) {
+    font-size: 3rem;
+  }
+}
+
+.heading-2 {
+  font-size: 1.8rem;
+  font-family: $display-font;
+  font-weight: 700;
+  color: $color-primary;
+  text-transform: uppercase;
+}
+
+.heading-3 {
+  font-size: 1.2rem;
+  font-family: $display-font;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.heading-5 {
+  font-size: 1.2rem;
+  font-family: $display-font;
+  font-weight: 300;
+}
+
+.heading-4 {
+  font-size: 1.8rem;
+  font-family: $display-font;
+  font-weight: 300;
+  color: $color-primary;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: 1.4rem;
+  font-family: $display-font;
+  font-weight: 400;
+  color: #000;
+  line-height: 2;
+}

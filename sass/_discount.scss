@@ -1,0 +1,16 @@
+.discount {
+  grid-column: center-start / center-end;
+
+  box-shadow: 2rem 2rem 0 rgb(240, 240, 240);
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 5rem;
+
+    margin-bottom: 5rem;
+  }
+}

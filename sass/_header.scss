@@ -1,0 +1,331 @@
+.header {
+  background-color: #fff;
+  grid-column: center-start / center-end;
+
+  @media only screen and (max-width: $bp-largest) {
+    padding: 0 3rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    padding: 0;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 35%;
+    border-top: 1rem solid #26262a;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 65%;
+    border-top: 1rem solid $color-accent;
+  }
+
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(2, min-content) 1fr;
+
+  &__top {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5rem 0 11.5rem 0;
+
+    @media only screen and (max-width: $bp-large) {
+      margin: 5rem 0 8rem 0;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      padding: 0 3rem;
+    }
+  }
+
+  &__logo-text {
+    font-size: 3rem;
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  &__main {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+
+    @media only screen and (max-width: $bp-small) {
+      justify-content: center;
+    }
+  }
+
+  &__nav {
+    @media only screen and (max-width: $bp-small) {
+      display: none;
+    }
+  }
+
+  &__nav ul {
+    display: flex;
+    gap: 4.2rem;
+
+    & li:nth-child(1) {
+      position: relative;
+    }
+
+    & li:nth-child(1)::before {
+      position: absolute;
+      content: '';
+      left: -1.2rem;
+      top: 0.2rem;
+      height: 1.1rem;
+      width: 0.5rem;
+      background-color: $color-accent;
+    }
+
+    & li {
+      list-style: none;
+
+      & a:link,
+      & a:visited {
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: $color-primary-light;
+        padding: 1rem 0;
+        transition: 0.2s;
+      }
+
+      & a:hover,
+      & a:active {
+        color: $color-primary;
+        border-bottom: 0.8rem solid $color-accent;
+      }
+    }
+  }
+
+  &__menu {
+    display: none;
+    cursor: pointer;
+
+    .line1,
+    .line2,
+    .line3 {
+      height: 2px;
+      width: 3rem;
+      background-color: #000;
+      margin-bottom: 0.7rem;
+    }
+    .line3 {
+      margin-bottom: 0 !important;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      display: block;
+    }
+  }
+}
+
+.user-nav {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+
+  @media only screen and (max-width: $bp-small) {
+    display: none;
+  }
+
+  &__icon-box {
+    cursor: pointer;
+  }
+
+  &__icon {
+    height: 2rem;
+    width: 2rem;
+    fill: #3c4042;
+    font-weight: 300;
+  }
+
+  &__user-name {
+    font-size: 1.2rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    color: $color-primary;
+  }
+}
+
+.hero {
+  grid-column: 1 / -1;
+  padding-top: 1rem;
+
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+
+  box-shadow: 2rme 2rem 5rem rgba(0, 0, 0, 0.5);
+
+  @media only screen and (max-width: $bp-small) {
+    grid-template-rows: 1fr 8rem;
+    box-shadow: none;
+  }
+
+  &__left {
+    grid-column: 1 / 8;
+    grid-row: 1 / -1;
+    background-image: url(../img/hero-img.jpg);
+    background-size: cover;
+    background-position: 25% 75%;
+    box-shadow: 2rem 2rem 0 rgb(240, 240, 240);
+
+    position: relative;
+
+    @media only screen and (max-width: $bp-small) {
+      grid-column: 1 / -1;
+      box-shadow: none;
+      text-align: center;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: absolute;
+    top: 50%;
+    right: 20%;
+    transform: translateY(-50%);
+
+    @media only screen and (max-width: $bp-small) {
+      // position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    // a {
+    //   text-decoration: none;
+    //   display: flex;
+    //   align-items: center;
+    //   justify-content: center;
+    // }
+  }
+
+  &__content .heading-bold {
+    font-size: 1.8rem;
+    font-family: $display-font;
+    font-weight: 700;
+    color: $color-primary;
+  }
+
+  &__number {
+    position: absolute;
+    bottom: 3rem;
+    left: 1rem;
+
+    @media only screen and (max-width: $bp-small) {
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 1.5rem;
+      bottom: 10rem;
+    }
+
+    .active {
+      @media only screen and (max-width: $bp-small) {
+        background-color: $color-accent !important;
+        color: $color-accent !important;
+      }
+    }
+
+    .slider-number {
+      font-size: 1.2rem;
+      font-family: $display-font;
+      font-weight: 700;
+      padding: 1.6rem 2.2rem;
+      background-color: #26262a;
+      color: #fff;
+      transition: all 0.2s;
+
+      &:hover {
+        background-color: $color-accent;
+        color: $color-primary;
+        cursor: pointer;
+
+        @media only screen and (max-width: $bp-small) {
+          background-color: $color-accent;
+          color: $color-accent;
+        }
+      }
+
+      @media only screen and (max-width: $bp-small) {
+        padding: 0.5rem 1rem;
+        background-color: #fff;
+      }
+    }
+  }
+
+  &-right {
+    grid-column: 8 / -1;
+    grid-row: 1 / -1;
+    background-color: $color-primary-dark;
+    position: relative;
+    box-shadow: 2rem 2rem 0 rgb(240, 240, 240);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media only screen and (max-width: $bp-small) {
+      grid-column: 1 / -1;
+      grid-row: 2 / 3;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: none;
+      padding: 0 3rem;
+    }
+    .heading-5 {
+      color: $color-accent;
+
+      margin-top: -10rem;
+      transform: rotate(90deg);
+
+      @media only screen and (max-width: $bp-small) {
+        transform: rotate(0);
+        margin-top: 0;
+      }
+
+      &::after {
+        background-color: #fff;
+        height: 1.2px;
+        width: 4.5rem;
+        content: '';
+        display: block;
+        transform: translate(9rem, -0.8rem);
+      }
+    }
+
+    .counter {
+      font-size: 1.2rem;
+      color: $color-accent;
+      position: absolute;
+      bottom: 3rem;
+      left: 50%;
+      transform: translateX(-50%);
+
+      @media only screen and (max-width: $bp-small) {
+        position: static;
+      }
+    }
+  }
+}
